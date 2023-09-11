@@ -1,0 +1,26 @@
+[package]
+name = "scroll"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+toml = "0.7.6"
+web3 = "0.19.0"
+ethsign = "0.9.0"
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+reqwest = { version = "0.11", features = ["json"] }
+rand = "0.8.5"
+tokio = { version = "1", features = ["full"] }
+futures = "0.3"
+log = "0.4"
+fern = "0.6"
+humantime = "2.1"
+hex = "0.4"
+ethers = "2.0.2"
+k256 = "0.13.1"
+ethabi = "18.0.0"
+secp256k1 = "0.27.0"
+chrono = "0.4"

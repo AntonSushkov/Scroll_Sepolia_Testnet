@@ -1,0 +1,59 @@
+# ===================
+# RPC URLs FOR DIFFERENT CHAINS
+# ===================
+[RPC]
+optimism = "https://rpc.ankr.com/optimism/"
+arbitrum = "https://arbitrum-one.publicnode.com"
+sepolia = "https://ethereum-sepolia.blockpi.network/v1/rpc/public"
+scroll_sepolia = "https://sepolia-rpc.scroll.io"
+
+# ===================
+# THREAD CONFIGURATIONS
+# ===================
+[threads]
+number_of_threads = 3  # Total number of concurrent threads to be executed.
+delay_between_threads = [10, 30] # Delay (in seconds) between the start of each thread, chosen randomly from the range.
+
+# ===================
+# GLOBAL SETTINGS
+# ===================
+[settings]
+gas_tracker = 15 # Threshold of gas amount below which swaps from Arbitrum to Sepolia won't be performed.
+cap_key = "your_key"  # 2Captcha API key.
+delay_action = [10, 30] # Delay (in seconds) between actions, chosen randomly from the range.
+
+# ===================
+# GAS REFUEL SETTINGS (Arbitrum to Sepolia)
+# ===================
+sepolia_eth_min = 0.08 # Minimum ETH amount to be received to Sepolia.
+sepolia_eth_max = 0.1 # Maximum ETH amount to be received to Sepolia.
+sepolia_eth_decimal = 4 # Decimal precision for ETH amounts
+
+# ===================
+# DEPOSIT SETTINGS (Sepolia to Scroll Sepolia)
+# ===================
+deposit_from_sepolia_to_scroll = 0.8 # Percentage of balance in Sepolia to be bridged to Scroll Sepolia. It's not recommended to set this above 0.9 (90%).
+fees = 0.003 # Transaction fees; advised to set slightly above the fee on https://scroll.io/bridge.
+
+# ===================
+# UNISWAP SWAP SETTINGS
+# ===================
+value_swap_min = 0.00001 # Minimum ETH amount for swapping to GHO tokens.
+value_swap_max = 0.0001 # Maximum ETH amount for swapping to GHO tokens.
+value_swap_decimal = 5 # Decimal precision for ETH swap amounts.
+
+# ===================
+# MODULE EXECUTION SETTINGS
+# ===================
+execute_get_faucet = true # Enable/Disable ETH fetching from Scroll Sepolia faucet (once every 24 hours). https://bwarelabs.com/faucets/scroll-testnet
+execute_get_gas_sepolia = false # Enable/Disable sending from Arbitrum to Sepolia.
+execute_bridge_from_sepolia_to_scroll = false # Enable/Disable bridge from Sepolia to Scroll Sepolia.
+
+execute_swap_eth_for_token = true # Enable/Disable swapping of ETH for GHO tokens.
+swap_eth_for_token_reps = [1, 5] # Number of repetitions for ETH-GHO token swap.
+
+execute_swap_token_for_eth = true # Enable/Disable swapping of GHO tokens for ETH.
+swap_token_for_eth_reps = [1, 7] # Number of repetitions for GHO-ETH token swap.
+
+execute_add_liquidity = true # Enable/Disable adding liquidity for the ETH-GHO pair on Uniswap.
+add_liquidity_reps = [1, 2] # Number of repetitions for liquidity addition.
